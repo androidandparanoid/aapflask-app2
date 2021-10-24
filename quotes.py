@@ -7,7 +7,7 @@ app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI']='postgresql+psycopg2://postgres:Welcome1@10.10.10.45/quotes'
 #PROD
     #NOTE on heroku engine is wrong tldr postgres:// was long deprecated, you should use postgresql://
-app.config['SQLALCHEMY_DATABASE_URI']= 'postgres://cqvfsstxhnchzp:cf18c4fce2620a6c35bcf2d72904e36d9ff1afa5322543e817088fbeb930fcbf@ec2-52-0-234-93.compute-1.amazonaws.com:5432/dbbq2jou531jck'
+app.config['SQLALCHEMY_DATABASE_URI']= 'postgresql://cqvfsstxhnchzp:cf18c4fce2620a6c35bcf2d72904e36d9ff1afa5322543e817088fbeb930fcbf@ec2-52-0-234-93.compute-1.amazonaws.com:5432/dbbq2jou531jck'
 # postgres://cqvfsstxhnchzp:cf18c4fce2620a6c35bcf2d72904e36d9ff1afa5322543e817088fbeb930fcbf@ec2-52-0-234-93.compute-1.amazonaws.com:5432/dbbq2jou531jck
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #this is tracking mechanism, that may take a lot of resources
 
@@ -21,8 +21,8 @@ class tblFavquotes(db.Model):
 
 @app.route('/')
 def index():
-    #result = tblFavquotes.query.all()
-    result = [{"Author":"Frank Moody","Quote":"You know why love stories have happy endings? I shake my head. 'Because they end too early,' she continues. 'They always end right at the kiss. You never have to see all the bullshit that comes later. You know, Life"},{"Author":"Frank Moody","Quote":"A morning of awkwardness is far better then a night of loneliness"},{"Author":"Frank Moody","Quote":"She said one thing and I said another and the next thing I knew I wanted to spend the rest of my life in the middle of that conversation."}]
+    result = tblFavquotes.query.all()
+    #result = [{"Author":"Frank Moody","Quote":"You know why love stories have happy endings? I shake my head. 'Because they end too early,' she continues. 'They always end right at the kiss. You never have to see all the bullshit that comes later. You know, Life"},{"Author":"Frank Moody","Quote":"A morning of awkwardness is far better then a night of loneliness"},{"Author":"Frank Moody","Quote":"She said one thing and I said another and the next thing I knew I wanted to spend the rest of my life in the middle of that conversation."}]
     # return render_template('index.html',quotes=quotes)#to passon the session add codes, then edit index.html
     return render_template('index.html',quotes=result)
 
