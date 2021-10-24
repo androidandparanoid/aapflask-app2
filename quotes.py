@@ -7,7 +7,7 @@ app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI']='postgresql+psycopg2://postgres:Welcome1@10.10.10.45/quotes'
 #PROD
     #NOTE on heroku engine is wrong tldr postgres:// was long deprecated, you should use postgresql://
-app.config['SQLALCHEMY_DATABASE_URI']= 'postgresql://cqvfsstxhnchzp:cf18c4fce2620a6c35bcf2d72904e36d9ff1afa5322543e817088fbeb930fcbf@ec2-52-0-234-93.compute-1.amazonaws.com:5432/dbbq2jou531jck'
+app.config['SQLALCHEMY_DATABASE_URI']= 'postgres://cqvfsstxhnchzp:cf18c4fce2620a6c35bcf2d72904e36d9ff1afa5322543e817088fbeb930fcbf@ec2-52-0-234-93.compute-1.amazonaws.com:5432/dbbq2jou531jck'
 # postgres://cqvfsstxhnchzp:cf18c4fce2620a6c35bcf2d72904e36d9ff1afa5322543e817088fbeb930fcbf@ec2-52-0-234-93.compute-1.amazonaws.com:5432/dbbq2jou531jck
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #this is tracking mechanism, that may take a lot of resources
 
