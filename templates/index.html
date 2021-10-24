@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %} Index Page {% endblock %}
+{% block content %}
+<div class="container theme-showcase">
+    <div class="row">
+        <div class="mt-4 p-5 bg-light rounded text-center">
+            <h1 class="jumbotron-heading">Favorite Quotes</h1>
+        </div>
+        
+        <div class="col">  
+            <br>               
+            {% if quotes %}                
+                <!-- <ul class="list-group"> -->
+                {% for q in quotes%}
+                    <div class="card text-white bg-dark mb-3">
+                        <div class="card-body">
+                            <h6 class="card-title text-muted">Author:</h6>
+                            <h4 class="card-subtitle mb-2">{{q["Author"]}}</h4>
+                            <h6 class="card-title text-muted ">Quote:</h6>
+                            <p class="card-text">{{q["Quote"]}}</p>
+
+                        </div>
+                    </div>        
+                    <!-- <li class="list-group-item list-group-item-action" >{{q["Quote"]}}</li>                                         -->
+                {% endfor%}
+                <!-- </ul> -->
+            {% else %}
+                <h3>No quotes here</h3>
+            {% endif %}
+           
+        </div>
+    </div>
+</div>
+    
+
+{% if codes %}
+
+{% endif %}
+{% endblock %}

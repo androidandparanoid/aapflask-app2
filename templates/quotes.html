@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %} Quotes Page {% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="/process" method="post">
+                    <div class="form-group">
+                        <label for="author">Quote author</label>
+                        <input type="text" id="author" name="author" class="form-control" placeholder="Add the quote's author here">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="quote">Quote</label>
+                        <textarea class="form-control" rows="5" id="quote" name="quote" placeholder="Add the quote here"></textarea>
+                    </div>
+                    <br>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-lg btn-dark btn-block" type="submit">Submit your Quote</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    
+{% endblock %}
